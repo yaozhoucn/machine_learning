@@ -40,3 +40,6 @@ def compute_cost(w ,b ,points):
         y = points[i,1]
         total_cost += (y -w * x - b) ** 2
     return total_cost/m
+
+# 定义核心算法，拟合函数
+#def average(data):
