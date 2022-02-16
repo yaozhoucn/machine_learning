@@ -83,10 +83,16 @@ def step_grad_desc( current_w, current_b, alpha, points ):
 lr.fit(x_new, y_new)
 
 #从训练好的模型中提取系数和截距
-w = lr.coef_
-b = lr.intercept_
-cost = compute_cost(w, b, points)
+#w = lr.coef_
+#b = lr.intercept_
+w1 = lr.coef_[0][0]
+b1 = lr.intercept_[0]
+cost = compute_cost(w1, b1, points)
 
-print("w is", w)
-print("b is", b)
-print("cost is", cost)
+# print("w is", w)
+# print("b is", b)
+# print("cost is", cost)
+plt.scatter(x,y)
+pred_y = w1 * x + b1
+plt.plot(x, pred_y, c='r')
+plt.show()
